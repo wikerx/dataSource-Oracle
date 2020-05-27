@@ -1,0 +1,77 @@
+spring:
+  datasource:
+    master:
+#      url: mj1R5EwXsQaupqyQe0zFsgMRqPpsCmPGHVDo2FS1kcYobtSjvSM5/xY98ZspR5jK
+      url: mj1R5EwXsQaupqyQe0zFsgMRqPpsCmPGHVDo2FS1kcYobtSjvSM5/xY98ZspR5jK
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+#      username: think
+      username: BU0u5UhDltfrTMyRE/5WOg==
+#      password: zmt23456
+      password: rR95xiz0xdh02grvCDwYJQ==
+      type: com.zaxxer.hikari.HikariDataSource
+      testOnBorrow: true
+      validationQuery: select 1 from dual
+#      等待来自池的连接的最大毫秒数
+      connectionTimeout: 30000
+#      自动提交从池中返回的连接
+      autoCommit: true
+#      连接允许在池中闲置的最长时间
+      idleTimeout: 20000
+#      池中连接最长生命周期 如果不等于0且小于30秒则会被重置回30分钟
+      maxLifetime: 60000
+#      池中维护的最小空闲连接数
+      minimumIdle: 1
+#      池中最大连接数，包括闲置和使用中的连接
+      maximumPoolSize: 5
+#      连接池的用户定义名称，主要出现在日志记录和JMX管理控制台中以识别池和池配置
+      poolName: HikariPool-Master
+#      连接将被测试活动的最大时间量
+      validationTimeout: 5000
+    cluster:
+    - key: slave1
+      url: mj1R5EwXsQaupqyQe0zFsgMRqPpsCmPGHVDo2FS1kcYobtSjvSM5/xY98ZspR5jK
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      username: E73HS/Nnw3BSQulk/MbVHg==
+      password: rR95xiz0xdh02grvCDwYJQ==
+      type: com.zaxxer.hikari.HikariDataSource
+      testOnBorrow: true
+      validationQuery: select 1 from dual
+#      等待来自池的连接的最大毫秒数
+      connectionTimeout: 30000
+#      自动提交从池中返回的连接
+      autoCommit: true
+#      连接允许在池中闲置的最长时间
+      idleTimeout: 20000
+#      池中连接最长生命周期 如果不等于0且小于30秒则会被重置回30分钟
+      maxLifetime: 60000
+#      池中维护的最小空闲连接数
+      minimumIdle: 1
+#      池中最大连接数，包括闲置和使用中的连接
+      maximumPoolSize: 5
+#      连接池的用户定义名称，主要出现在日志记录和JMX管理控制台中以识别池和池配置
+      poolName: HikariPool-Master
+#      连接将被测试活动的最大时间量
+      validationTimeout: 5000
+    - key: slave2
+      url: mj1R5EwXsQaupqyQe0zFsgMRqPpsCmPGHVDo2FS1kcYobtSjvSM5/xY98ZspR5jK
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      username: E73HS/Nnw3BSQulk/MbVHg==
+      password: rR95xiz0xdh02grvCDwYJQ==
+      testOnBorrow: true
+      validationQuery: select 1 from dual
+#      等待来自池的连接的最大毫秒数
+      connectionTimeout: 30000
+#      自动提交从池中返回的连接
+      autoCommit: true
+#      连接允许在池中闲置的最长时间
+      idleTimeout: 20000
+#      池中连接最长生命周期 如果不等于0且小于30秒则会被重置回30分钟
+      maxLifetime: 60000
+#      池中维护的最小空闲连接数
+      minimumIdle: 1
+#      池中最大连接数，包括闲置和使用中的连接
+      maximumPoolSize: 5
+#      连接池的用户定义名称，主要出现在日志记录和JMX管理控制台中以识别池和池配置
+      poolName: HikariPool-Master
+#      连接将被测试活动的最大时间量
+      validationTimeout: 5000

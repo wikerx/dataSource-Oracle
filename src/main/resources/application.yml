@@ -1,0 +1,56 @@
+# Tomcat
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+  port: 80
+  servlet:
+    context-path: /ds
+
+spring:
+  # 环境 sit:集成测试环境|pre:预生产环境|prd:生成环境
+  profiles:
+    active: sit
+  mvc:
+    static-path-pattern: /static/**
+  # jackson时间格式化
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+      enabled: true
+
+mybatis:
+  mapper-locations: classpath:/mybatis/mappers/*.xml
+  config-location:  classpath:/mybatis/config/mybatis-config.xml
+
+logging:
+  file: log/ds.log
+  level:
+    com:
+      scott:
+        ds:
+          repository: debug
+
+
+#支持关闭应用：IP:PORT/项目/api/shutdown  eg:curl -X POST http://localhost/ds/api/shutdown
+management:
+  endpoints:
+    web:
+      exposure:
+        include: shutdown
+#        应用关闭的前缀
+      base-path: /api
+#      开启密码验证 = 需要设置密码
+#    shutdown:
+#      sensitive: true
+
+    #注意下面这个位置！！
+  endpoint:
+    shutdown:
+      enabled: true
+      sensitive: false
